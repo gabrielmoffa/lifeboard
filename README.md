@@ -2,6 +2,8 @@
 
 Lifeboard is a macOS menu bar app that turns your desktop wallpaper into a live, AI-editable dashboard. You can update it from the menu bar, a global hotkey, Telegram, or an MCP client such as Claude Code or Codex.
 
+Lifeboard is currently macOS-only. It stores runtime state, rendered wallpapers, and secrets under `~/.lifeboard`; those files are not meant to be committed.
+
 ## Setup
 
 Run the setup script from the project root:
@@ -262,3 +264,15 @@ Useful MCP tools include:
 Keep this README current whenever user-facing setup, configuration, widgets, Telegram behavior, layouts, themes, MCP tools, or common workflows change.
 
 For implementation guidance, see `AGENTS.md`.
+
+## Contributing
+
+Issues and pull requests are welcome. See `CONTRIBUTING.md` for local setup, test commands, and contribution guidelines.
+
+## Security
+
+Do not open public issues with API keys, bot tokens, private board data, or screenshots that expose secrets. See `SECURITY.md` for reporting guidance.
+
+## License
+
+MIT. See `LICENSE`.
