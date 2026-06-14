@@ -1,0 +1,110 @@
+:root {
+    --bg: #0a0a0a;
+    --fg: #00ff41;
+    --fg-dim: #00aa2a;
+    --fg-bright: #33ff66;
+    --accent: #00ffcc;
+    --accent2: #ff0066;
+    --surface: rgba(0, 255, 65, 0.05);
+    --border: rgba(0, 255, 65, 0.15);
+    --font: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
+    --font-size-sm: 14px;
+    --font-size-md: 18px;
+    --font-size-lg: 28px;
+    --font-size-xl: 42px;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+}
+
+/* Subtle grid background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+        linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Scanline effect */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.08) 2px,
+        rgba(0, 0, 0, 0.08) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.widget {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    z-index: 1;
+    backdrop-filter: blur(2px);
+}
+
+h1, h2, h3, h4 {
+    color: var(--fg-bright);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+a { color: var(--accent); }
+
+/* Glow effect on headings */
+h1 { text-shadow: 0 0 20px rgba(0, 255, 65, 0.3); }
+
+/* photo_library widget — terminal CRT frame */
+.photo-frame {
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    padding: 6px;
+    box-shadow:
+        0 0 24px rgba(0, 255, 204, 0.25),
+        inset 0 0 0 1px rgba(0, 255, 65, 0.4);
+    position: relative;
+}
+.photo-frame::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 255, 65, 0.06) 2px,
+        rgba(0, 255, 65, 0.06) 3px
+    );
+    border-radius: 2px;
+}
+.photo-frame img {
+    border-radius: 0;
+    filter: hue-rotate(85deg) contrast(1.1) saturate(0.55) brightness(0.95);
+}
+.photo-caption {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75em;
+    text-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+}

@@ -1,0 +1,60 @@
+:root {
+    --bg: #20242a;
+    --fg: #d7dce2;
+    --fg-dim: #8f98a3;
+    --fg-bright: #ffffff;
+    --accent: #9fb0c3;
+    --accent2: #d49a6a;
+    --surface: rgba(48, 54, 62, 0.72);
+    --border: rgba(215, 220, 226, 0.12);
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-size-sm: 14px;
+    --font-size-md: 17px;
+    --font-size-lg: 26px;
+    --font-size-xl: 40px;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: var(--font-size-md);
+    line-height: 1.56;
+}
+
+.widget {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    z-index: 1;
+}
+
+h1, h2, h3, h4 {
+    color: var(--fg-bright);
+    font-weight: 700;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.photo-frame {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 8px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.photo-frame img {
+    border-radius: 3px;
+    filter: saturate(0.85);
+}
+
+.photo-caption {
+    color: var(--fg-dim);
+    letter-spacing: 0.04em;
+}

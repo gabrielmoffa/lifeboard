@@ -1,0 +1,13 @@
+{
+  "name": "clock",
+  "description": "Digital clock showing current time and date",
+  "default_size": [
+    20,
+    12
+  ],
+  "refresh_interval": 300,
+  "data": {},
+  "data_provider": "datetime",
+  "html_template": "<div id='clock-widget'><div class='clock-time' id='clock-display'></div><div class='clock-date' id='clock-date-display'></div></div><script>(function(){ var now = new Date(); var h = now.getHours(); var m = String(now.getMinutes()).padStart(2,'0'); var ampm = h >= 12 ? 'PM' : 'AM'; h = h % 12 || 12; document.getElementById('clock-display').textContent = h + ':' + m + ' ' + ampm; var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']; var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; document.getElementById('clock-date-display').textContent = days[now.getDay()] + ', ' + months[now.getMonth()] + ' ' + now.getDate(); })();</script>",
+  "css": "#clock-widget { height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; } #clock-widget .clock-time { font-size:clamp(2rem,16cqi,5rem); font-weight:700; color:var(--fg-bright,#fff); letter-spacing:0.05em; text-shadow:0 0 20px var(--accent,#0066ff); } #clock-widget .clock-date { font-size:clamp(0.8rem,4.8cqi,1.4rem); color:var(--fg-dim,#888); margin-top:0.3em; letter-spacing:0.1em; }"
+}

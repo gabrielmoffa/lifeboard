@@ -1,0 +1,22 @@
+{
+  "name": "weather",
+  "description": "Current weather conditions with temperature",
+  "default_size": [
+    22,
+    18
+  ],
+  "refresh_interval": 3600,
+  "data": {
+    "location": "auto",
+    "temp": "--",
+    "condition": "Loading...",
+    "humidity": "--",
+    "wind": "--",
+    "units": "imperial",
+    "temp_unit": "F",
+    "wind_unit": "mph"
+  },
+  "data_provider": "weather",
+  "html_template": "<div class='weather-widget'><script>(function(){var d=WIDGET_DATA||{};var el=document.currentScript.parentElement;var tempUnit=d.temp_unit||(d.units==='metric'?'C':'F');var windUnit=d.wind_unit||(d.units==='metric'?'km/h':'mph');var loc=document.createElement('div');loc.className='weather-location';loc.textContent=d.location&&d.location!=='auto'?d.location:'--';el.appendChild(loc);var temp=document.createElement('div');temp.className='weather-temp';temp.textContent=d.temp&&d.temp!=='--'?d.temp+'\u00b0'+tempUnit:'--\u00b0';el.appendChild(temp);var cond=document.createElement('div');cond.className='weather-cond';cond.textContent=d.condition&&d.condition!=='Loading...'?d.condition:'--';el.appendChild(cond);var details=document.createElement('div');details.className='weather-details';var hum=document.createElement('span');hum.textContent=d.humidity&&d.humidity!=='--'?d.humidity+'% humidity':'-- %';details.appendChild(hum);var wind=document.createElement('span');wind.textContent=d.wind&&d.wind!=='--'?d.wind+' '+windUnit+' wind':'-- '+windUnit;details.appendChild(wind);el.appendChild(details);})();</script></div>",
+  "css": ".weather-widget { height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.3em; } .weather-widget .weather-location { font-size:clamp(0.7rem,4cqi,1rem); color:var(--fg-dim,#888); letter-spacing:0.15em; text-transform:uppercase; } .weather-widget .weather-temp { font-size:clamp(2.5rem,16cqi,5rem); font-weight:800; color:var(--fg-bright,#fff); } .weather-widget .weather-cond { font-size:clamp(0.9rem,5.2cqi,1.5rem); color:var(--fg,#ccc); } .weather-widget .weather-details { display:flex; gap:1.5em; font-size:clamp(0.7rem,3.6cqi,1rem); color:var(--fg-dim,#888); margin-top:0.5em; }"
+}

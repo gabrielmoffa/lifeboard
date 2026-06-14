@@ -1,0 +1,73 @@
+:root {
+    --bg: #f7f8f2;
+    --fg: #223028;
+    --fg-dim: #69756d;
+    --fg-bright: #0f1712;
+    --accent: #168a4a;
+    --accent2: #2563eb;
+    --surface: rgba(255, 255, 255, 0.78);
+    --border: rgba(31, 70, 45, 0.14);
+    --font: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
+    --font-size-sm: 14px;
+    --font-size-md: 17px;
+    --font-size-lg: 26px;
+    --font-size-xl: 40px;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: var(--font-size-md);
+    line-height: 1.55;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(31, 70, 45, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31, 70, 45, 0.035) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+}
+
+.widget {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 8px 22px rgba(31, 70, 45, 0.08);
+    z-index: 1;
+}
+
+h1, h2, h3, h4 {
+    color: var(--fg-bright);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.photo-frame {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 7px;
+    box-shadow: 0 8px 22px rgba(31, 70, 45, 0.1);
+}
+
+.photo-frame img {
+    border-radius: 1px;
+    filter: contrast(1.02) saturate(0.9);
+}
+
+.photo-caption {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}

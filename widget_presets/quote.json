@@ -1,0 +1,43 @@
+{
+  "name": "quote",
+  "description": "Inspirational quote that rotates daily",
+  "default_size": [
+    30,
+    10
+  ],
+  "data": {
+    "quotes": [
+      {
+        "text": "The best time to plant a tree was 20 years ago. The second best time is now.",
+        "author": "Chinese Proverb"
+      },
+      {
+        "text": "What you do today can improve all your tomorrows.",
+        "author": "Ralph Marston"
+      },
+      {
+        "text": "It does not matter how slowly you go as long as you do not stop.",
+        "author": "Confucius"
+      },
+      {
+        "text": "Everything you've ever wanted is on the other side of fear.",
+        "author": "George Addair"
+      },
+      {
+        "text": "The only way to do great work is to love what you do.",
+        "author": "Steve Jobs"
+      },
+      {
+        "text": "Start where you are. Use what you have. Do what you can.",
+        "author": "Arthur Ashe"
+      },
+      {
+        "text": "Discipline is choosing between what you want now and what you want most.",
+        "author": "Abraham Lincoln"
+      }
+    ]
+  },
+  "data_provider": null,
+  "html_template": "<div id='quote-widget'><div class='q-text' id='q-text'></div><div class='q-author' id='q-author'></div></div><script>(function(){ var d = WIDGET_DATA || {}; var quotes = d.quotes || []; if(quotes.length === 0) return; var dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(),0,0)) / 86400000); var idx = dayOfYear % quotes.length; document.getElementById('q-text').textContent = '\"' + quotes[idx].text + '\"'; document.getElementById('q-author').textContent = '\u2014 ' + quotes[idx].author; })();</script>",
+  "css": "#quote-widget { height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.5em; box-sizing:border-box; } #quote-widget .q-text { font-size:clamp(1rem,6.4cqi,2rem); color:var(--fg,#ccc); font-style:italic; text-align:center; line-height:1.5; max-width:90%; } #quote-widget .q-author { font-size:clamp(0.7rem,4cqi,1.1rem); color:var(--fg-dim,#888); margin-top:0.8em; letter-spacing:0.1em; }"
+}

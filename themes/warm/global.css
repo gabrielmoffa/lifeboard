@@ -1,0 +1,59 @@
+:root {
+    --bg: #f5efe5;
+    --fg: #2e2a24;
+    --fg-dim: #776d60;
+    --fg-bright: #17130f;
+    --accent: #b2563d;
+    --accent2: #3f7f68;
+    --surface: rgba(255, 252, 246, 0.82);
+    --border: rgba(82, 61, 42, 0.14);
+    --font: Georgia, 'Times New Roman', serif;
+    --font-size-sm: 14px;
+    --font-size-md: 18px;
+    --font-size-lg: 28px;
+    --font-size-xl: 42px;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+}
+
+.widget {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(72, 51, 32, 0.1);
+    z-index: 1;
+}
+
+h1, h2, h3, h4 {
+    color: var(--fg-bright);
+    font-weight: 700;
+}
+
+a {
+    color: var(--accent);
+}
+
+.photo-frame {
+    background: #fffaf1;
+    border: 1px solid rgba(82, 61, 42, 0.1);
+    border-radius: 3px;
+    padding: 10px 10px 24px;
+    box-shadow: 0 8px 24px rgba(72, 51, 32, 0.16);
+}
+
+.photo-frame img {
+    border-radius: 2px;
+    filter: saturate(0.92) contrast(0.98);
+}
+
+.photo-caption {
+    color: var(--fg-dim);
+    font-size: 0.95em;
+}

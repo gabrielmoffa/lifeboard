@@ -1,0 +1,60 @@
+:root {
+    --bg: #fdf6e3;
+    --fg: #586e75;
+    --fg-dim: #93a1a1;
+    --fg-bright: #073642;
+    --accent: #268bd2;
+    --accent2: #d33682;
+    --surface: rgba(238, 232, 213, 0.72);
+    --border: rgba(101, 123, 131, 0.18);
+    --font: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
+    --font-size-sm: 14px;
+    --font-size-md: 17px;
+    --font-size-lg: 26px;
+    --font-size-xl: 40px;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: var(--font-size-md);
+    line-height: 1.58;
+}
+
+.widget {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px;
+    box-shadow: 0 8px 22px rgba(7, 54, 66, 0.08);
+    z-index: 1;
+}
+
+h1, h2, h3, h4 {
+    color: var(--fg-bright);
+    font-weight: 700;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.photo-frame {
+    background: #eee8d5;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px;
+    box-shadow: 0 8px 22px rgba(7, 54, 66, 0.08);
+}
+
+.photo-frame img {
+    border-radius: 3px;
+    filter: saturate(0.9) contrast(0.98);
+}
+
+.photo-caption {
+    color: var(--fg-dim);
+    letter-spacing: 0.05em;
+}

@@ -1,0 +1,61 @@
+:root {
+    --bg: #f5f0ff;
+    --fg: #2e2540;
+    --fg-dim: #756892;
+    --fg-bright: #181126;
+    --accent: #7c5cff;
+    --accent2: #c04f8f;
+    --surface: rgba(255, 255, 255, 0.74);
+    --border: rgba(124, 92, 255, 0.15);
+    --font: Avenir Next, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-size-sm: 14px;
+    --font-size-md: 17px;
+    --font-size-lg: 27px;
+    --font-size-xl: 42px;
+}
+
+body {
+    background:
+        linear-gradient(135deg, #f5f0ff 0%, #f0e9ff 48%, #fff0f7 100%);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: var(--font-size-md);
+    line-height: 1.58;
+}
+
+.widget {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px;
+    box-shadow: 0 10px 28px rgba(124, 92, 255, 0.1);
+    z-index: 1;
+}
+
+h1, h2, h3, h4 {
+    color: var(--fg-bright);
+    font-weight: 700;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.photo-frame {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 10px 26px rgba(124, 92, 255, 0.12);
+}
+
+.photo-frame img {
+    border-radius: 5px;
+    filter: saturate(0.94) brightness(1.02);
+}
+
+.photo-caption {
+    color: var(--accent);
+    letter-spacing: 0.05em;
+}

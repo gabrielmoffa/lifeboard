@@ -1,0 +1,13 @@
+{
+  "name": "image",
+  "description": "Display a local image on the wallpaper (background or card)",
+  "default_size": [100, 100],
+  "z_index": -1,
+  "data_provider": "image",
+  "data": {
+    "file_path": "",
+    "fit": "cover"
+  },
+  "html_template": "<div class=\"image-widget\"><script>var el = document.currentScript.parentElement; var uri = WIDGET_DATA.image_data_uri; var fit = WIDGET_DATA.fit || 'cover'; if (uri) { el.innerHTML = '<img src=\"' + uri + '\" style=\"width:100%;height:100%;object-fit:' + fit + ';display:block;\">'; } else { el.innerHTML = '<div style=\"display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--fg,#888);font-size:14px;\">No image set</div>'; }</script></div>",
+  "css": ".image-widget { width: 100%; height: 100%; overflow: hidden; }"
+}

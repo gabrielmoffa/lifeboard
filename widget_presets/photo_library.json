@@ -1,0 +1,18 @@
+{
+  "name": "photo_library",
+  "description": "Cycling photo from a local folder or internet topic. Refresh interval controls cadence.",
+  "default_size": [25, 30],
+  "refresh_interval": 3600,
+  "z_index": 0,
+  "data_provider": "photo_library",
+  "data": {
+    "source": "folder",
+    "folder_path": "",
+    "topic": "",
+    "fetch_size": [800, 600],
+    "show_caption": false,
+    "last_shown": ""
+  },
+  "html_template": "<div class='photo-stage'><script>(function(){var el=document.currentScript.parentElement;var d=WIDGET_DATA;var w=d.image_width||4;var h=d.image_height||3;var frame=document.createElement('div');frame.className='photo-frame';frame.style.aspectRatio=w+' / '+h;if(d.image_data_uri){var img=document.createElement('img');img.src=d.image_data_uri;frame.appendChild(img);if(d.show_caption&&d.caption){var cap=document.createElement('div');cap.className='photo-caption';cap.textContent=d.caption;frame.appendChild(cap);}}else{var msg=document.createElement('div');msg.className='photo-empty';msg.textContent=d.message||'No photo';frame.appendChild(msg);}el.appendChild(frame);})();</script></div>",
+  "css": ".photo-stage{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}.photo-frame{max-width:100%;max-height:100%;background:var(--surface,rgba(255,255,255,0.85));border:1px solid var(--border,rgba(0,0,0,0.08));border-radius:8px;padding:8px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;flex-direction:column;box-sizing:border-box;}.photo-frame img{flex:1 1 auto;min-height:0;width:100%;height:100%;object-fit:contain;border-radius:4px;display:block;}.photo-caption{font-size:0.85em;color:var(--fg-dim,#888);text-align:center;margin-top:6px;letter-spacing:0.05em;flex:0 0 auto;}.photo-empty{flex:1;display:flex;align-items:center;justify-content:center;color:var(--fg-dim,#888);font-size:0.9em;}"
+}

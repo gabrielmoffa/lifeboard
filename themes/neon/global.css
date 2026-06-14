@@ -1,0 +1,67 @@
+:root {
+    --bg: #050507;
+    --fg: #e8f8ff;
+    --fg-dim: #7e8c9a;
+    --fg-bright: #ffffff;
+    --accent: #00e5ff;
+    --accent2: #ff3df2;
+    --surface: rgba(15, 18, 28, 0.72);
+    --border: rgba(0, 229, 255, 0.24);
+    --font: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
+    --font-size-sm: 14px;
+    --font-size-md: 17px;
+    --font-size-lg: 26px;
+    --font-size-xl: 40px;
+}
+
+body {
+    background:
+        radial-gradient(circle at 15% 15%, rgba(255, 61, 242, 0.16), transparent 28%),
+        radial-gradient(circle at 82% 20%, rgba(0, 229, 255, 0.14), transparent 30%),
+        #050507;
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: var(--font-size-md);
+    line-height: 1.54;
+}
+
+.widget {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow:
+        0 0 24px rgba(0, 229, 255, 0.12),
+        inset 0 0 0 1px rgba(255, 61, 242, 0.08);
+    z-index: 1;
+}
+
+h1, h2, h3, h4 {
+    color: var(--fg-bright);
+    font-weight: 700;
+    text-shadow: 0 0 14px rgba(0, 229, 255, 0.24);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.photo-frame {
+    background: rgba(15, 18, 28, 0.82);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    padding: 7px;
+    box-shadow: 0 0 28px rgba(255, 61, 242, 0.16);
+}
+
+.photo-frame img {
+    border-radius: 4px;
+    filter: contrast(1.08) saturate(1.08);
+}
+
+.photo-caption {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}

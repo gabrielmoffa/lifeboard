@@ -1,0 +1,28 @@
+{
+  "name": "todo",
+  "description": "To-do list with checkable items; height auto-sizes from task count",
+  "default_size": [
+    24,
+    23
+  ],
+  "data": {
+    "title": "To Do",
+    "items": [
+      {
+        "text": "First task",
+        "done": false
+      },
+      {
+        "text": "Second task",
+        "done": false
+      },
+      {
+        "text": "Third task",
+        "done": false
+      }
+    ]
+  },
+  "data_provider": null,
+  "html_template": "<div id='todo-widget'><div class='todo-title'></div><ul class='todo-list' id='todo-list'></ul><div class='todo-summary' id='todo-summary'></div></div><script>(function(){ var d = WIDGET_DATA || {}; document.querySelector('.todo-title').textContent = d.title || 'To Do'; var items = d.items || []; var list = document.getElementById('todo-list'); var done = 0; items.forEach(function(item){ var li = document.createElement('li'); li.className = item.done ? 'todo-item done' : 'todo-item'; var check = document.createElement('span'); check.className = 'todo-check'; check.textContent = item.done ? '\\u2713' : '\\u25CB'; var text = document.createElement('span'); text.className = 'todo-text'; text.textContent = item.text; li.appendChild(check); li.appendChild(text); list.appendChild(li); if(item.done) done++; }); var total = items.length; document.getElementById('todo-summary').textContent = done + '/' + total + ' completed'; })();</script>",
+  "css": "#todo-widget { height:100%; display:flex; flex-direction:column; padding:1em; box-sizing:border-box; } #todo-widget .todo-title { font-size:clamp(1rem,6cqi,2rem); font-weight:700; color:var(--accent,#00ff41); margin-bottom:0.5em; letter-spacing:0.1em; border-bottom:1px solid var(--border,rgba(255,255,255,0.1)); padding-bottom:0.4em; } #todo-widget .todo-list { list-style:none; padding:0; margin:0; flex:1; overflow:visible; } #todo-widget .todo-item { display:flex; align-items:center; gap:0.6em; padding:0.4em 0; font-size:clamp(0.75rem,4cqi,1.1rem); color:var(--fg,#ccc); border-bottom:1px solid rgba(255,255,255,0.05); } #todo-widget .todo-item.done .todo-text { text-decoration:line-through; opacity:0.4; } #todo-widget .todo-check { font-size:clamp(0.8rem,4.4cqi,1.2rem); width:1.2em; text-align:center; } #todo-widget .todo-item.done .todo-check { color:var(--accent,#00ff41); } #todo-widget .todo-item:not(.done) .todo-check { color:var(--fg-dim,#888); } #todo-widget .todo-summary { margin-top:0.6em; font-size:clamp(0.6rem,3.2cqi,0.9rem); color:var(--fg-dim,#888); text-align:right; border-top:1px solid var(--border,rgba(255,255,255,0.1)); padding-top:0.4em; }"
+}

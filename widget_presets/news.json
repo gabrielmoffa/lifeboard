@@ -1,0 +1,20 @@
+{
+  "name": "news",
+  "description": "Topic-based headlines from Google News RSS",
+  "default_size": [
+    30,
+    28
+  ],
+  "refresh_interval": 3600,
+  "data_provider": "news",
+  "data": {
+    "topic": "technology",
+    "max_items": 5,
+    "country": "US",
+    "language": "en",
+    "articles": [],
+    "message": "Loading..."
+  },
+  "html_template": "<div class='news-widget'><script>(function(){var d=WIDGET_DATA||{};var el=document.currentScript.parentElement;var topic=d.topic||'News';var articles=d.articles||[];var title=document.createElement('div');title.className='news-title';title.textContent=String(topic).toUpperCase();el.appendChild(title);if(articles.length){var list=document.createElement('div');list.className='news-list';articles.forEach(function(a){var item=document.createElement('div');item.className='news-item';var headline=document.createElement('div');headline.className='news-headline';headline.textContent=a.title||'Untitled';item.appendChild(headline);if(a.source){var source=document.createElement('div');source.className='news-source';source.textContent=a.source;item.appendChild(source);}list.appendChild(item);});el.appendChild(list);}else{var empty=document.createElement('div');empty.className='news-empty';empty.textContent=d.message||'No news found';el.appendChild(empty);}})();</script></div>",
+  "css": ".news-widget{height:100%;box-sizing:border-box;padding:0.9em;display:flex;flex-direction:column;justify-content:center;gap:0.7em;overflow:hidden;}.news-widget .news-title{font-size:clamp(0.65rem,3.2cqi,0.9rem);color:var(--fg-dim,#888);letter-spacing:0.16em;font-weight:700;}.news-widget .news-list{display:flex;flex-direction:column;gap:0.55em;min-height:0;overflow:hidden;}.news-widget .news-item{border-bottom:1px solid var(--border,rgba(255,255,255,0.12));padding-bottom:0.45em;}.news-widget .news-headline{font-size:clamp(0.82rem,4cqi,1.08rem);line-height:1.22;color:var(--fg-bright,#fff);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}.news-widget .news-source{font-size:clamp(0.68rem,3.2cqi,0.86rem);color:var(--fg-dim,#888);margin-top:0.25em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.news-widget .news-empty{font-size:clamp(0.8rem,4cqi,1rem);color:var(--fg-dim,#888);}"
+}

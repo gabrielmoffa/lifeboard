@@ -1,0 +1,57 @@
+:root {
+    --bg: #fafafa;
+    --fg: #1a1a1a;
+    --fg-dim: #888888;
+    --fg-bright: #000000;
+    --accent: #0066ff;
+    --accent2: #ff4444;
+    --surface: rgba(255, 255, 255, 0.85);
+    --border: rgba(0, 0, 0, 0.08);
+    --font: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    --font-size-sm: 14px;
+    --font-size-md: 17px;
+    --font-size-lg: 26px;
+    --font-size-xl: 40px;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+}
+
+.widget {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    z-index: 1;
+}
+
+h1, h2, h3, h4 {
+    color: var(--fg-bright);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+a { color: var(--accent); text-decoration: none; }
+
+/* photo_library widget — polaroid-ish minimal */
+.photo-frame {
+    background: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 12px 28px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.photo-frame img { border-radius: 2px; }
+.photo-caption {
+    font-family: 'Caveat', 'Bradley Hand', cursive;
+    font-size: 1.1em;
+    color: #555;
+    letter-spacing: 0;
+    margin-top: 10px;
+}

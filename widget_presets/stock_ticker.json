@@ -1,0 +1,19 @@
+{
+  "name": "stock_ticker",
+  "description": "Live stock price ticker with daily change (requires Finnhub API key in config)",
+  "default_size": [
+    22,
+    18
+  ],
+  "refresh_interval": 3600,
+  "data_provider": "stock",
+  "data": {
+    "symbols": [
+      "AAPL",
+      "GOOGL",
+      "MSFT"
+    ]
+  },
+  "html_template": "<div class='stock-ticker'></div><script>(function(){ var d = WIDGET_DATA || {}; var tickers = d.tickers || []; var el = document.currentScript.parentElement.querySelector('.stock-ticker'); var html = '<div class=\"ticker-title\">STOCKS</div>'; if(d.message){ html += '<div class=\"ticker-message\">' + d.message + '</div>'; } function parseNum(v){ if(typeof v === 'number') return Number.isFinite(v) ? v : null; if(typeof v === 'string'){ var n = Number(v.replace(/,/g, '')); return Number.isFinite(n) ? n : null; } return null; } tickers.forEach(function(t){ var change = parseNum(t.change_pct); if(change === null) change = 0; var color = change >= 0 ? 'var(--accent-alt, #44cc44)' : '#ff4444'; var arrow = change >= 0 ? '\\u25B2' : '\\u25BC'; var priceNum = parseNum(t.price); var price = priceNum === null ? (t.price || '--') : priceNum.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}); var prefix = priceNum === null ? '' : '$'; html += '<div class=\"ticker-row\"><span class=\"ticker-name\">' + t.symbol + '</span><span class=\"ticker-price\">' + prefix + price + '</span><span class=\"ticker-change\" style=\"color:' + color + '\">' + arrow + ' ' + Math.abs(change).toFixed(2) + '%</span></div>'; }); el.innerHTML = html; })();</script>",
+  "css": ".stock-ticker { height:100%; display:flex; flex-direction:column; justify-content:center; padding:0.8em; } .stock-ticker .ticker-title { font-size:clamp(0.6rem,3.2cqi,0.9rem); color:var(--fg-dim,#888); letter-spacing:0.2em; margin-bottom:0.5em; } .stock-ticker .ticker-message { color:var(--accent,#d7ff64); font-size:clamp(0.72rem,3.6cqi,1rem); line-height:1.25; margin-bottom:0.45em; } .stock-ticker .ticker-row { display:flex; justify-content:space-between; align-items:center; gap:0.6em; padding:0.3em 0; border-bottom:1px solid rgba(255,255,255,0.05); } .stock-ticker .ticker-name { font-size:clamp(0.8rem,4cqi,1.1rem); color:var(--fg,#ccc); min-width:4em; font-weight:600; } .stock-ticker .ticker-price { font-size:clamp(0.8rem,4.4cqi,1.2rem); font-weight:700; color:var(--fg-bright,#fff); font-variant-numeric:tabular-nums; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; } .stock-ticker .ticker-change { font-size:clamp(0.7rem,3.6cqi,1rem); font-variant-numeric:tabular-nums; min-width:5em; text-align:right; }"
+}
